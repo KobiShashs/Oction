@@ -1,9 +1,11 @@
-package btinnolab.com.oction;
+package btinnolab.com.oction.Fragments;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import btinnolab.com.oction.R;
 
 /**
  * Created by user on 6/29/2017.

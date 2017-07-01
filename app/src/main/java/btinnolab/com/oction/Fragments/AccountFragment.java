@@ -1,6 +1,5 @@
-package btinnolab.com.oction;
+package btinnolab.com.oction.Fragments;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,16 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import btinnolab.com.oction.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AuctionUpcomingFragment.OnFragmentInteractionListener} interface
+ * {@link AccountFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AuctionUpcomingFragment#newInstance} factory method to
+ * Use the {@link AccountFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AuctionUpcomingFragment extends Fragment {
+public class AccountFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +30,7 @@ public class AuctionUpcomingFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AuctionUpcomingFragment() {
+    public AccountFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +40,11 @@ public class AuctionUpcomingFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AuctionUpcomingFragment.
+     * @return A new instance of fragment AccountFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AuctionUpcomingFragment newInstance(String param1, String param2) {
-        AuctionUpcomingFragment fragment = new AuctionUpcomingFragment();
+    public static AccountFragment newInstance(String param1, String param2) {
+        AccountFragment fragment = new AccountFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +65,7 @@ public class AuctionUpcomingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_auction_upcoming, container, false);
+        return inflater.inflate(R.layout.fragment_account, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -2,12 +2,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="btinnolab.com.oction.AuctionCurrentFragment">
+    tools:context="btinnolab.com.oction.Fragments.AuctionCurrentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/list"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:divider="@null"
+        android:layout_marginTop="50dp"
+        android:dividerHeight="1dp"/>
+    <!-- Empty view is only visible when the list has no items. -->
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_gravity="center"/>
+
+    <!-- Loading indicator is only shown before the first load -->
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
 </FrameLayout>

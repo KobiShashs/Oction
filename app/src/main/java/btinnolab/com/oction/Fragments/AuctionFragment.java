@@ -1,23 +1,26 @@
-package btinnolab.com.oction;
+package btinnolab.com.oction.Fragments;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import btinnolab.com.oction.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AuctionCurrentFragment.OnFragmentInteractionListener} interface
+ * {@link AuctionFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AuctionCurrentFragment#newInstance} factory method to
+ * Use the {@link AuctionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AuctionCurrentFragment extends Fragment {
+public class AuctionFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +32,7 @@ public class AuctionCurrentFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AuctionCurrentFragment() {
+    public AuctionFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +42,11 @@ public class AuctionCurrentFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AuctionCurrentFragment.
+     * @return A new instance of fragment AuctionFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AuctionCurrentFragment newInstance(String param1, String param2) {
-        AuctionCurrentFragment fragment = new AuctionCurrentFragment();
+    public static AuctionFragment newInstance(String param1, String param2) {
+        AuctionFragment fragment = new AuctionFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,13 +61,31 @@ public class AuctionCurrentFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_auction_current, container, false);
+        View view = inflater.inflate(R.layout.fragment_auction, container, false);
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getContext(), getFragmentManager());
+        // Set up the ViewPager with the sections adapter.
+        ViewPager mViewPage = (ViewPager) view.findViewById(R.id.viewpager);
+        mViewPage.setAdapter(mSectionsPagerAdapter);
+
+        // Find the tab layout that shows the tabs
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabs);
+
+        // Connect the tab layout with the view pager. This will
+        //   1. Update the tab layout when the view pager is swiped
+        //   2. Update the view pager when a tab is selected
+        //   3. Set the tab layout's tab names with the view pager's adapter's titles
+        //      by calling onPageTitle()
+        tabLayout.setupWithViewPager(mViewPage);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
